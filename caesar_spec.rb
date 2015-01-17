@@ -1,12 +1,17 @@
 require_relative "caesar.rb"
 
-describe "The cipher function" do
-  it "complains when first argument isn't a string" do
-    expect(caesar_cipher(2345, 3)).to eq("Can't do it! Please provide a string and an integer as arguments.")
+describe "#caesar_cipher" do
+  
+  context "when first argument isn't a string" do
+    it "complains" do
+      expect(caesar_cipher(2345, 3)).to eq("Can't do it! Please provide a string and an integer as arguments.")
+    end
   end
   
-  it "complains when second argument isn't an integer" do
-    expect(caesar_cipher("cat", 5.5)).to eq("Can't do it! Please provide a string and an integer as arguments.")
+  context "when second argument isn't an integer" do
+    it "complains" do
+      expect(caesar_cipher("cat", 5.5)).to eq("Can't do it! Please provide a string and an integer as arguments.")
+    end
   end
 
   it "successfully encrypts capital letters" do
